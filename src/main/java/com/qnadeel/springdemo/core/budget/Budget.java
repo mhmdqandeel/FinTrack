@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Table(name = "CATEGORIES")
+@Table(name = "BUDGETS")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
