@@ -1,7 +1,7 @@
-package com.qnadeel.springdemo.core.transaction;
+package com.qnadeel.springdemo.core.entities.budget;
 
-import com.qnadeel.springdemo.core.category.Category;
-import com.qnadeel.springdemo.core.user.User;
+import com.qnadeel.springdemo.core.entities.category.Category;
+import com.qnadeel.springdemo.core.entities.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
@@ -9,22 +9,19 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Column;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.EnumType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "transactions")
+@Table(name = "BUDGETS")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Transaction {
+public class Budget {
 
     @Id
     @GeneratedValue
@@ -34,20 +31,19 @@ public class Transaction {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(nullable = false)
-    private BigDecimal amount;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private TransactionType type;
-
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
     @Column(nullable = false)
-    private LocalDateTime date;
+    private BigDecimal limitAmount;
 
-    @Column(length = 500)
-    private String note;
+    @Column(nullable = false)
+    private BigDecimal spentAmount = BigDecimal.ZERO;
+
+    @Column(nullable = false)
+    private int month;
+
+    @Column(nullable = false)
+    private int year;
 }
