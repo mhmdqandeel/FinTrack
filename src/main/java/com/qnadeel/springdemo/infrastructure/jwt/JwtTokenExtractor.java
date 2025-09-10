@@ -33,9 +33,9 @@ public class JwtTokenExtractor implements JwtExtractor {
     }
 
     @Override
-    public boolean validateToken(String token, UserDetails userDetails) {
+    public boolean validateToken(String token, String userName) {
         return extractUsername(token)
-                .map(username -> username.equals(userDetails.getUsername()) && !isTokenExpired(token))
+                .map(user -> user.equals(userName) && !isTokenExpired(token))
                 .orElse(false);
     }
 
