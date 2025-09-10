@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.core.shared;
+package com.qnadeel.springdemo.core.shared.exeption;
 
 import java.util.List;
 import java.util.UUID;
