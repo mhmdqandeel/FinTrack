@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.infrastructure.security.filter;
+package com.qnadeel.springdemo.infrastructure.security;
 
 import com.qnadeel.springdemo.core.securiry.JwtExtractor;
 import jakarta.servlet.FilterChain;
