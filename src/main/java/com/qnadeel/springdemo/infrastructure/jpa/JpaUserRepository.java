@@ -14,6 +14,6 @@ public class JpaUserRepository implements UserRepository {
 
     @Override
     public Optional<User> findByUserName(String userName) {
-        return jpaUser.findByUsername(userName);
+        return jpaUser.findByUserName(userName);
     }
 }
