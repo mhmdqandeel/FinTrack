@@ -1,7 +1,7 @@
-package com.qnadeel.springdemo.core.category;
+package com.qnadeel.springdemo.core.entities.category;
 
 
-import com.qnadeel.springdemo.core.user.User;
+import com.qnadeel.springdemo.core.entities.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
