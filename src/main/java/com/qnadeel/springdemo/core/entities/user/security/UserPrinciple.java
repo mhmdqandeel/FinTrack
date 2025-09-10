@@ -1,6 +1,6 @@
 package com.qnadeel.springdemo.core.entities.user.security;
 
-import com.qnadeel.springdemo.core.entities.user.User;
+import com.qnadeel.springdemo.core.entities.user.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

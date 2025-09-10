@@ -1,8 +1,9 @@
-package com.qnadeel.springdemo.core.entities.user;
+package com.qnadeel.springdemo.core.entities.user.entity;
 
 import com.qnadeel.springdemo.core.entities.role.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class User {
 
     @Id
