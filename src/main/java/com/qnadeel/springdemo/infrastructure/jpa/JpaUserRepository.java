@@ -16,6 +16,7 @@ public class JpaUserRepository implements UserRepository {
     private final EntityManager em;
 
     @Override
+    @Transactional
     public Optional<User> findByUserName(String userName) {
         return em.createQuery("SELECT u from User u WHERE u.userName= :userName", User.class)
                 .setParameter("userName", userName)
@@ -23,6 +24,7 @@ public class JpaUserRepository implements UserRepository {
     }
 
     @Override
+    @Transactional
     public boolean existsByEmail(String email) {
         return em.createQuery("select 1 from User u where email = :email", Integer.class)
                 .setParameter("email", email)
@@ -32,6 +34,7 @@ public class JpaUserRepository implements UserRepository {
     }
 
     @Override
+    @Transactional
     public Optional<User> findByEmailOrUsername(String username, String email) {
        return em.createQuery("SELECT u from User u where userName = :username or email= : email", User.class)
                .setParameter("username", username)
