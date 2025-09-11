@@ -12,7 +12,6 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 public class JpaUserRepository implements UserRepository {
-    private final JpaUser jpaUser;
 
     private final EntityManager em;
 
@@ -25,12 +24,19 @@ public class JpaUserRepository implements UserRepository {
 
     @Override
     public boolean existsByEmail(String email) {
-        return jpaUser.existsByEmail(email);
+        return em.createQuery("select 1 from User u where email = :email", Integer.class)
+                .setParameter("email", email)
+                .setMaxResults(1)
+                .getResultList()
+                .isEmpty();
     }
 
     @Override
     public Optional<User> findByEmailOrUsername(String username, String email) {
-        return jpaUser.findByEmailOrUserName(username, email);
+       return em.createQuery("SELECT u from User u where userName = :username or email= : email", User.class)
+               .setParameter("username", username)
+               .setParameter("email", email)
+               .getResultList().stream().findFirst();
     }
 
     @Override
