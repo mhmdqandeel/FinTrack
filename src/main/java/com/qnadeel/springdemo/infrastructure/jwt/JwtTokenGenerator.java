@@ -22,7 +22,7 @@ public class JwtTokenGenerator implements JwtGenerator {
 
     }
 
-    public String generateToken(UUID id, String email) {
+    public String generateToken(UUID id, String emailOrUsername) {
         return Jwts
                 .builder()
                 .subject(id.toString())
@@ -30,7 +30,7 @@ public class JwtTokenGenerator implements JwtGenerator {
                 .expiration(new Date(System.currentTimeMillis()
                         + 60 * 60 * 60 * 100))
                 .signWith(secretKey)
-                .issuer(email)
+                .issuer(emailOrUsername)
                 .compact();
     }
 }

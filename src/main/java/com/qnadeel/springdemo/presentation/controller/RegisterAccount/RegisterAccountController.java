@@ -1,10 +1,11 @@
-package com.qnadeel.springdemo.presentation.controller;
+package com.qnadeel.springdemo.presentation.controller.RegisterAccount;
 
-import com.qnadeel.springdemo.application.RegisterAccountCommand;
-import com.qnadeel.springdemo.application.RegisterAccountUseCase;
+import com.qnadeel.springdemo.application.RegisterAccount.RegisterAccountCommand;
+import com.qnadeel.springdemo.application.RegisterAccount.RegisterAccountUseCase;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
-import com.qnadeel.springdemo.presentation.dto.RegisterAccountRequest;
-import com.qnadeel.springdemo.presentation.dto.RegisterAccountResponse;
+import com.qnadeel.springdemo.presentation.dto.RegisterAccount.RegisterAccountRequest;
+import com.qnadeel.springdemo.presentation.dto.RegisterAccount.RegisterAccountResponse;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,13 +22,15 @@ public class RegisterAccountController {
     private final RegisterAccountUseCase registerAccountUseCase;
 
     @PostMapping("/register")
-    public ResponseEntity<RegisterAccountResponse> register(@RequestBody RegisterAccountRequest request){
+    public ResponseEntity<RegisterAccountResponse> register(@RequestBody @Valid RegisterAccountRequest request){
         User user = registerAccountUseCase.execute(new RegisterAccountCommand(
                 request.name(),
                 request.email(),
                 request.password()
         ));
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(new RegisterAccountResponse(user));
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(new RegisterAccountResponse(user));
     }
 }

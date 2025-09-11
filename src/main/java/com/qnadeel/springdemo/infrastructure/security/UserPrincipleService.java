@@ -18,9 +18,9 @@ public class UserPrincipleService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        return userRepository.findByUserName(userName)
+    public UserDetails loadUserByUsername(String emailOrUsername) throws UsernameNotFoundException {
+        return userRepository.findByEmailOrUsername(emailOrUsername, emailOrUsername)
                 .map(UserPrinciple::new)
-                .orElseThrow(() -> new ResourcesNotFoundException("User " + userName + " not found"));
+                .orElseThrow(() -> new ResourcesNotFoundException("User " + emailOrUsername + " not found"));
     }
 }

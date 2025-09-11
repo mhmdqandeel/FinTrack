@@ -1,16 +1,16 @@
-package com.qnadeel.springdemo.presentation.dto;
+package com.qnadeel.springdemo.presentation.dto.RegisterAccount;
 
 import com.qnadeel.springdemo.core.entities.user.entity.User;
-import lombok.Data;
+import lombok.Getter;
 
 import java.util.UUID;
 
-@Data
+@Getter
 public class RegisterAccountResponse {
 
-    private UUID id;
-    private String email;
-    private String userName;
+    private final UUID id;
+    private final String email;
+    private final String userName;
 
     public RegisterAccountResponse(User user) {
         this.id = user.getId();

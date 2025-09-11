@@ -9,11 +9,6 @@ public class ResourcesNotFoundException extends RuntimeException {
     }
 
     public ResourcesNotFoundException(String name) {
-        super("Resource not found with name: "+name);
+        super("Resource " +name+" not found");
     }
-
-    public ResourcesNotFoundException(List<String> names) {
-        super("Resources not found: " + names.toString());
-    }
-
 }

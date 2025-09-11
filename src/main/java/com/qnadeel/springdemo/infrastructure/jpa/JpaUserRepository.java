@@ -23,6 +23,11 @@ public class JpaUserRepository implements UserRepository {
     }
 
     @Override
+    public Optional<User> findByEmailOrUsername(String username, String email) {
+        return jpaUser.findByEmailOrUserName(username, email);
+    }
+
+    @Override
     public User save(User user) {
         return jpaUser.save(user);
     }
