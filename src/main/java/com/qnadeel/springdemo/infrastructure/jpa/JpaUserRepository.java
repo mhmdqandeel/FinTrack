@@ -2,8 +2,10 @@ package com.qnadeel.springdemo.infrastructure.jpa;
 
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import com.qnadeel.springdemo.core.entities.user.UserRepository;
+import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -12,9 +14,13 @@ import java.util.Optional;
 public class JpaUserRepository implements UserRepository {
     private final JpaUser jpaUser;
 
+    private final EntityManager em;
+
     @Override
     public Optional<User> findByUserName(String userName) {
-        return jpaUser.findByUserName(userName);
+        return em.createQuery("SELECT u from User u WHERE u.userName= :userName", User.class)
+                .setParameter("userName", userName)
+                .getResultList().stream().findFirst();
     }
 
     @Override
@@ -28,7 +34,9 @@ public class JpaUserRepository implements UserRepository {
     }
 
     @Override
+    @Transactional
     public User save(User user) {
-        return jpaUser.save(user);
+        em.persist(user);
+        return user;
     }
 }
