@@ -1,6 +1,7 @@
 package com.qnadeel.springdemo.core.entities.user.entity;
 
 import com.qnadeel.springdemo.core.entities.role.Role;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

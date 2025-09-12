@@ -26,7 +26,7 @@ public class JpaUserRepository implements UserRepository {
     @Override
     @Transactional
     public boolean existsByEmail(String email) {
-        return em.createQuery("select 1 from User u where email = :email", Integer.class)
+        return !em.createQuery("select 1 from User u where email = :email", Integer.class)
                 .setParameter("email", email)
                 .setMaxResults(1)
                 .getResultList()
