@@ -1,6 +1,7 @@
-package com.qnadeel.springdemo.infrastructure.security;
+package com.qnadeel.springdemo.infrastructure.security.filter;
 
 import com.qnadeel.springdemo.core.securiry.JwtExtractor;
+import com.qnadeel.springdemo.infrastructure.security.UserPrincipleService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

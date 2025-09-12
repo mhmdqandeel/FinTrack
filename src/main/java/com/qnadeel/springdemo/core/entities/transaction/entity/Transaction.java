@@ -1,6 +1,7 @@
-package com.qnadeel.springdemo.core.entities.transaction;
+package com.qnadeel.springdemo.core.entities.transaction.entity;
 
 import com.qnadeel.springdemo.core.entities.category.Category;
+import com.qnadeel.springdemo.core.entities.transaction.model.TransactionType;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

@@ -1,5 +1,6 @@
 package com.qnadeel.springdemo.infrastructure.security;
 
+import com.qnadeel.springdemo.infrastructure.security.filter.JwtAuthFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
