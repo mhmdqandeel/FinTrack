@@ -48,4 +48,9 @@ public class JpaUserRepository implements UserRepository {
         em.persist(user);
         return user;
     }
+
+    @Override
+    public void deleteAll() {
+        em.createQuery("delete from User");
+    }
 }
