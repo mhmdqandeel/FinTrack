@@ -61,7 +61,7 @@ class RegisterAccountUseCaseTest {
     }
 
     @Test
-    public void user_should_throw_exception() {
+    public void should_throw_exception() {
         RegisterAccountCommand command =
                 new RegisterAccountCommand("name", "email", "password");
 
