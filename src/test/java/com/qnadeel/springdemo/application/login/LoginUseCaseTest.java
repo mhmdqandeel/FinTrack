@@ -56,4 +56,14 @@ class LoginUseCaseTest {
         verify(userRepository).findByEmailOrUsername("emailOrUserName", "emailOrUserName");
         verify(passwordEncryptor).matches("password", "encrypted");
     }
+
+    @Test
+    void should_throw_exception_when_user_is_not_found() {
+        LoginCommand command = new LoginCommand("notfound", "password");
+
+        when(userRepository.findByEmailOrUsername("notfound", "notfound"))
+                .thenReturn(Optional.empty());
+
+        assertThrows(ResourcesNotFoundException.class, () -> {underTest.execute(command);});
+    }
 }
