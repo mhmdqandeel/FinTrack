@@ -15,7 +15,6 @@ public class LoginUseCase {
 
     private final UserRepository userRepository;
     private final PasswordEncryptor passwordEncryptor;
-    private final JwtGenerator jwtGenerator;
 
     public User execute(LoginCommand command) {
         String emailOrUsername = command.emailOrUsername();
