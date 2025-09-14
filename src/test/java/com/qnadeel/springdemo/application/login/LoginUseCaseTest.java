@@ -66,4 +66,24 @@ class LoginUseCaseTest {
 
         assertThrows(ResourcesNotFoundException.class, () -> {underTest.execute(command);});
     }
+
+    @Test
+    void should_throw_exception_when_invalid_password() {
+        LoginCommand command =
+                new LoginCommand("emailOrUserName", "wrong password");
+
+        User user = User.builder()
+                .userName("name")
+                .email("email")
+                .password("encrypted")
+                .build();
+
+        when(userRepository.findByEmailOrUsername(eq("emailOrUserName"), eq("emailOrUserName")))
+                .thenReturn(Optional.of(user));
+        when(passwordEncryptor.matches("wrong password", "encrypted"))
+                .thenReturn(false).thenReturn(true);
+
+
+        assertThrows(ValidationException.class, () -> {underTest.execute(command);});
+    }
 }
