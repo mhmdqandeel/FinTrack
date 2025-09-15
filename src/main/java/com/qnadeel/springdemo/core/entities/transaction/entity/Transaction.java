@@ -5,6 +5,7 @@ import com.qnadeel.springdemo.core.entities.transaction.model.TransactionType;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,6 +18,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Transaction {
 
     @Id

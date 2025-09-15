@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.infrastructure.jpa;
+package com.qnadeel.springdemo.infrastructure.jpa.user;
 
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import com.qnadeel.springdemo.core.entities.user.UserRepository;
