@@ -1,4 +1,8 @@
 package com.qnadeel.springdemo.presentation.dto.transaction;
 
-public record CreateTransactionRequest() {
+import java.math.BigDecimal;
+import java.util.UUID;
+
+public record CreateTransactionRequest(BigDecimal amount, String transactionType,
+                                       UUID categoryID, String note) {
 }

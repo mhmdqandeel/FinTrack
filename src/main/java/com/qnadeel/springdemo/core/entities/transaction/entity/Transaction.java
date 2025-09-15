@@ -3,15 +3,7 @@ package com.qnadeel.springdemo.core.entities.transaction.entity;
 import com.qnadeel.springdemo.core.entities.category.Category;
 import com.qnadeel.springdemo.core.entities.transaction.model.TransactionType;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Column;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.EnumType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -51,4 +43,9 @@ public class Transaction {
 
     @Column(length = 500)
     private String note;
+
+    @PrePersist
+    protected void onCreate() {
+        date = LocalDateTime.now();
+    }
 }
