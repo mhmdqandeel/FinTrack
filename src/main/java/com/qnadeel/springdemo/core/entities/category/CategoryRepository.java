@@ -1,4 +1,6 @@
 package com.qnadeel.springdemo.core.entities.category;
 
-public interface CategoryRepository {
+import com.qnadeel.springdemo.core.shared.BaseRepository;
+
+public interface CategoryRepository extends BaseRepository<Category> {
 }

@@ -56,10 +56,10 @@ public class JpaUserRepository implements UserRepository {
     }
 
     @Override
+    @Transactional
     public Optional<User> findById(UUID id) {
         return em.createQuery("SELECT u from User u WHERE u.id = :id", User.class)
                 .setParameter("id", id)
                 .getResultList().stream().findFirst();
-
     }
 }
