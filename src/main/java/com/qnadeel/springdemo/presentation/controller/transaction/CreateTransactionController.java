@@ -5,7 +5,10 @@ import com.qnadeel.springdemo.application.transaction.CreateTransactionUseCase;
 import com.qnadeel.springdemo.core.entities.transaction.entity.Transaction;
 import com.qnadeel.springdemo.core.entities.user.security.UserPrinciple;
 import com.qnadeel.springdemo.presentation.dto.transaction.CreateTransactionRequest;
+import com.qnadeel.springdemo.presentation.dto.transaction.CreateTransactionResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +33,11 @@ public class CreateTransactionController {
                 request.categoryID(),
                 request.note()
         ));
-        return ResponseEntity.ok().build();
+
+        CreateTransactionResponse response = new CreateTransactionResponse(transaction);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(response);
     }
 }
