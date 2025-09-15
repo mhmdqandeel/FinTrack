@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 @AllArgsConstructor
@@ -52,5 +53,10 @@ public class JpaUserRepository implements UserRepository {
     @Override
     public void deleteAll() {
         em.createQuery("delete from User");
+    }
+
+    @Override
+    public Optional<User> findById(UUID id) {
+
     }
 }

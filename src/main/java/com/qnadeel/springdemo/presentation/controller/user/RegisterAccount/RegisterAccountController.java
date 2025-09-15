@@ -1,7 +1,7 @@
 package com.qnadeel.springdemo.presentation.controller.user.RegisterAccount;
 
-import com.qnadeel.springdemo.application.RegisterAccount.RegisterAccountCommand;
-import com.qnadeel.springdemo.application.RegisterAccount.RegisterAccountUseCase;
+import com.qnadeel.springdemo.application.user.RegisterAccount.RegisterAccountCommand;
+import com.qnadeel.springdemo.application.user.RegisterAccount.RegisterAccountUseCase;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import com.qnadeel.springdemo.presentation.dto.user.RegisterAccount.RegisterAccountRequest;
 import com.qnadeel.springdemo.presentation.dto.user.RegisterAccount.RegisterAccountResponse;
