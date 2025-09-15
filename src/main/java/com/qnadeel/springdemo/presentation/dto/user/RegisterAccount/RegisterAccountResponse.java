@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.presentation.dto.RegisterAccount;
+package com.qnadeel.springdemo.presentation.dto.user.RegisterAccount;
 
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import lombok.Getter;

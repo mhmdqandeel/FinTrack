@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.presentation.dto.login;
+package com.qnadeel.springdemo.presentation.dto.user.login;
 
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import lombok.Getter;

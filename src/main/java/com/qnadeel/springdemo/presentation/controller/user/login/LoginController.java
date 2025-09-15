@@ -1,11 +1,11 @@
-package com.qnadeel.springdemo.presentation.controller.login;
+package com.qnadeel.springdemo.presentation.controller.user.login;
 
 import com.qnadeel.springdemo.application.login.LoginCommand;
 import com.qnadeel.springdemo.application.login.LoginUseCase;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import com.qnadeel.springdemo.core.securiry.JwtGenerator;
-import com.qnadeel.springdemo.presentation.dto.login.LoginRequest;
-import com.qnadeel.springdemo.presentation.dto.login.LoginResponse;
+import com.qnadeel.springdemo.presentation.dto.user.login.LoginRequest;
+import com.qnadeel.springdemo.presentation.dto.user.login.LoginResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
