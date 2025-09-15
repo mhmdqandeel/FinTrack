@@ -1,9 +1,8 @@
-package com.qnadeel.springdemo.application.login;
+package com.qnadeel.springdemo.application.user.login;
 
 import com.qnadeel.springdemo.core.entities.user.UserRepository;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import com.qnadeel.springdemo.core.entities.user.security.PasswordEncryptor;
-import com.qnadeel.springdemo.core.securiry.JwtGenerator;
 import com.qnadeel.springdemo.core.shared.exeption.ResourcesNotFoundException;
 import com.qnadeel.springdemo.core.shared.exeption.ValidationException;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.presentation.dto.RegisterAccount;
+package com.qnadeel.springdemo.presentation.dto.user.RegisterAccount;
 
 import jakarta.validation.constraints.Email;
 
