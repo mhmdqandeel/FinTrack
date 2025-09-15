@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.infrastructure.jpa;
+package com.qnadeel.springdemo.infrastructure.jpa.user;
 
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import com.qnadeel.springdemo.core.entities.user.UserRepository;
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 @AllArgsConstructor
@@ -52,5 +53,13 @@ public class JpaUserRepository implements UserRepository {
     @Override
     public void deleteAll() {
         em.createQuery("delete from User");
+    }
+
+    @Override
+    @Transactional
+    public Optional<User> findById(UUID id) {
+        return em.createQuery("SELECT u from User u WHERE u.id = :id", User.class)
+                .setParameter("id", id)
+                .getResultList().stream().findFirst();
     }
 }

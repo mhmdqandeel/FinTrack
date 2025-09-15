@@ -1,5 +1,7 @@
 package com.qnadeel.springdemo.application.RegisterAccount;
 
+import com.qnadeel.springdemo.application.user.RegisterAccount.RegisterAccountCommand;
+import com.qnadeel.springdemo.application.user.RegisterAccount.RegisterAccountUseCase;
 import com.qnadeel.springdemo.core.entities.user.UserFactory;
 import com.qnadeel.springdemo.core.entities.user.UserRepository;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
@@ -10,9 +12,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

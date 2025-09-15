@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.application.RegisterAccount;
+package com.qnadeel.springdemo.application.user.RegisterAccount;
 
 import com.qnadeel.springdemo.core.entities.user.UserFactory;
 import com.qnadeel.springdemo.core.entities.user.UserRepository;
