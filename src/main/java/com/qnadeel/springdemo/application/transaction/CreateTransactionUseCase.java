@@ -12,6 +12,8 @@ public class CreateTransactionUseCase {
     private final UserRepository userRepository;
 
     public void execute(CreateTransactionCommand command) {
-        User user =
+        User user = userRepository.getOrThrowByID(command.userID());
+
+
     }
 }
