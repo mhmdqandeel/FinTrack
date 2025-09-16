@@ -13,5 +13,12 @@ public class CreateCategoryUseCase {
 
     private final UserRepository userRepository;
 
+    public Category execute(CreateCategoryCommand command) {
+        User user = userRepository.getOrThrowByID(command.userId());
 
+        return Category.builder()
+                .name(command.category())
+                .createdBy(user)
+                .build();
+    }
 }
