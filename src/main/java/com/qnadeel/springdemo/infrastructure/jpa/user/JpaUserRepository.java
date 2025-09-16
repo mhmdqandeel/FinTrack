@@ -24,14 +24,13 @@ public class JpaUserRepository implements UserRepository {
                 .getResultList().stream().findFirst();
     }
 
-    @Override
     @Transactional
     public boolean existsByEmail(String email) {
-        return !em.createQuery("select 1 from User u where email = :email", Integer.class)
+        Long count = em.createQuery(
+                        "select count(u) from User u where u.email = :email", Long.class)
                 .setParameter("email", email)
-                .setMaxResults(1)
-                .getResultList()
-                .isEmpty();
+                .getSingleResult();
+        return count > 0;
     }
 
     @Override

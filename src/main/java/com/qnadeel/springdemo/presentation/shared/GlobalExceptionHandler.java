@@ -1,5 +1,6 @@
 package com.qnadeel.springdemo.presentation.shared;
 
+import com.qnadeel.springdemo.core.shared.exeption.DuplicateResourcesException;
 import com.qnadeel.springdemo.core.shared.exeption.ResourcesNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
@@ -17,10 +18,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResourcesNotFoundException.class)
     public ResponseEntity<Map<String, Object>> handleResourcesNotFoundException(ResourcesNotFoundException ex, HttpServletRequest request) {
         Map<String, Object> error = new HashMap<>();
-        error.put("status", 409);
+        error.put("status", 404);
         error.put("message", ex.getMessage());
         error.put("path", request.getRequestURI());
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
     @ExceptionHandler(ResponseStatusException.class)
@@ -30,4 +31,14 @@ public class GlobalExceptionHandler {
         error.put("message", ex.getReason());
         return new ResponseEntity<>(error, ex.getStatusCode());
     }
+
+    @ExceptionHandler(DuplicateResourcesException.class)
+    public ResponseEntity<Map<String, Object>> handleDuplicateResourcesException(DuplicateResourcesException ex, HttpServletRequest request) {
+        Map<String, Object> error = new HashMap<>();
+        error.put("status", HttpStatus.CONFLICT.value()); // 409
+        error.put("message", ex.getMessage());
+        error.put("path", request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
 }
