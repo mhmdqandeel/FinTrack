@@ -3,7 +3,6 @@ package com.qnadeel.springdemo.presentation.controller;
 import com.qnadeel.springdemo.application.CreateCategoryUseCase;
 import com.qnadeel.springdemo.application.RegisterAccount.CreateCategoryCommand;
 import com.qnadeel.springdemo.core.entities.category.Category;
-import com.qnadeel.springdemo.core.entities.category.CategoryRepository;
 import com.qnadeel.springdemo.core.entities.user.security.UserPrinciple;
 import com.qnadeel.springdemo.presentation.dto.CreateCategoryRequest;
 import lombok.AllArgsConstructor;

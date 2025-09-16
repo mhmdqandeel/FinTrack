@@ -5,6 +5,7 @@ import com.qnadeel.springdemo.core.entities.user.UserRepository;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import com.qnadeel.springdemo.core.shared.exeption.DuplicateResourcesException;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class RegisterAccountUseCase {
 
     private final UserRepository userRepository;
-    private final UserFactory userFactory;
+    private final @Lazy UserFactory userFactory;
 
     @Transactional
     public User execute(RegisterAccountCommand command){

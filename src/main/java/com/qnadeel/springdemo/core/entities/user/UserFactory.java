@@ -2,6 +2,7 @@ package com.qnadeel.springdemo.core.entities.user;
 
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class UserFactory {
 
-    private final PasswordEncoder passwordEncoder;
+    private final @Lazy PasswordEncoder passwordEncoder;
 
     public User create(String name, String email, String rawPassword) {
         String encryptedPassword = passwordEncoder.encode(rawPassword);
