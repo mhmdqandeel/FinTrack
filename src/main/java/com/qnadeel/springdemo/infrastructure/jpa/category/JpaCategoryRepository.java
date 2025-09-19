@@ -25,7 +25,6 @@ public class JpaCategoryRepository implements CategoryRepository {
 
     @Override
     public void deleteAll() {
-
     }
 
     @Override

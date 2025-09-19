@@ -5,6 +5,7 @@ import com.qnadeel.springdemo.core.entities.transaction.entity.Transaction;
 import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -16,6 +17,7 @@ public class JpaTransactionRepository implements TransactionRepository {
     private final EntityManager em;
 
     @Override
+    @Transactional
     public Transaction save(Transaction transaction) {
         em.persist(transaction);
         return transaction;
