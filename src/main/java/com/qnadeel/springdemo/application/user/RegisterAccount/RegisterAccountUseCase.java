@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 @AllArgsConstructor
 public class RegisterAccountUseCase {
 
-    private final UserRepository userRepository;
-    private final @Lazy UserFactory userFactory;
+    private final @Lazy UserRepository userRepository;
+    private final UserFactory userFactory;
 
     @Transactional
     public User execute(RegisterAccountCommand command){

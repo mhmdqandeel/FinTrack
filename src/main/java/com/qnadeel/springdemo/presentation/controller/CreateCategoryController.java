@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class CreateCategoryController {
 
-
     private final CreateCategoryUseCase createCategoryUseCase;
 
     @PostMapping("/")

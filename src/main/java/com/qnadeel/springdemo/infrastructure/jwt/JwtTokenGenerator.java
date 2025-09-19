@@ -27,10 +27,10 @@ public class JwtTokenGenerator implements JwtGenerator {
                 .builder()
                 .subject(id.toString())
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis()
-                        + 60 * 60 * 60 * 100))
+                .expiration(new Date(System.currentTimeMillis() + 60 * 60 * 60 * 1000))
+                .claim("username", emailOrUsername)
                 .signWith(secretKey)
-                .issuer(emailOrUsername)
                 .compact();
     }
+
 }
