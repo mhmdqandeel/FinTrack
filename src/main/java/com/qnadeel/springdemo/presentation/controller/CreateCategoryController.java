@@ -5,6 +5,7 @@ import com.qnadeel.springdemo.application.RegisterAccount.CreateCategoryCommand;
 import com.qnadeel.springdemo.core.entities.category.Category;
 import com.qnadeel.springdemo.core.entities.user.security.UserPrinciple;
 import com.qnadeel.springdemo.presentation.dto.category.CreateCategoryRequest;
+import com.qnadeel.springdemo.presentation.dto.category.CreateCategoryResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,8 +29,10 @@ public class CreateCategoryController {
         Category category = createCategoryUseCase
                 .execute(new CreateCategoryCommand(user.getUserId(), request.category()));
 
+        CreateCategoryResponse responseData = new CreateCategoryResponse(category);
+
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(category);
+                .body(responseData);
     }
 }

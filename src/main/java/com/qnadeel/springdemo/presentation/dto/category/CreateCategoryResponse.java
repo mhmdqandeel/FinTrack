@@ -1,5 +1,6 @@
 package com.qnadeel.springdemo.presentation.dto.category;
 
+import com.qnadeel.springdemo.core.entities.category.Category;
 import lombok.Getter;
 
 import java.util.UUID;
@@ -7,13 +8,13 @@ import java.util.UUID;
 @Getter
 public class CreateCategoryResponse {
 
-    private UUID id;
-    private String name;
-    private UUID userId;
+    private final UUID id;
+    private final String name;
+    private final UUID userId;
 
-    public CreateCategoryResponse(UUID id, String name, UUID userId) {
-        this.id = id;
-        this.name = name;
-        this.userId = userId;
+    public CreateCategoryResponse(Category category) {
+        this.id = category.getId();
+        this.name = category.getName();
+        this.userId = category.getCreatedBy().getId();
     }
 }

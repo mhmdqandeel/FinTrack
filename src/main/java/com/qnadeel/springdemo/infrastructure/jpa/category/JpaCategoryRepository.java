@@ -17,8 +17,10 @@ public class JpaCategoryRepository implements CategoryRepository {
     private final EntityManager em;
 
     @Override
+    @Transactional
     public Category save(Category category) {
-        return null;
+        em.persist(category);
+        return category;
     }
 
     @Override
