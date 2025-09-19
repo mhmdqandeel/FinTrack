@@ -1,7 +1,9 @@
 package com.qnadeel.springdemo.core.entities.user;
 
 import com.qnadeel.springdemo.core.entities.user.entity.User;
+import com.qnadeel.springdemo.core.entities.user.model.Role;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +19,7 @@ public class UserFactory {
                 .userName(name)
                 .email(email)
                 .password(encryptedPassword)
+                .role(Role.USER)
                 .build();
     }
 }

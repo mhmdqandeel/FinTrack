@@ -7,6 +7,7 @@ import com.qnadeel.springdemo.presentation.dto.user.RegisterAccount.RegisterAcco
 import com.qnadeel.springdemo.presentation.dto.user.RegisterAccount.RegisterAccountResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class RegisterAccountController {
 
-    private final RegisterAccountUseCase registerAccountUseCase;
+    private final @Lazy RegisterAccountUseCase registerAccountUseCase;
 
     @PostMapping("/register")
     public ResponseEntity<RegisterAccountResponse> register(@RequestBody @Valid RegisterAccountRequest request){

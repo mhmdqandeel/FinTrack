@@ -26,7 +26,8 @@ public class JwtTokenExtractor implements JwtExtractor {
     @Override
     public Optional<String> extractUsername(String token) {
         try {
-            return Optional.ofNullable(extractClaim(token, claims -> claims.get("username", String.class)));
+            return Optional.ofNullable(extractClaim(token, claims ->
+                    claims.get("username", String.class)));
         } catch (Exception e) {
             return Optional.empty();
         }
