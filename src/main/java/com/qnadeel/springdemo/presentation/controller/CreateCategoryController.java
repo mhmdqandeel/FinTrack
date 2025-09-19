@@ -4,7 +4,7 @@ import com.qnadeel.springdemo.application.CreateCategoryUseCase;
 import com.qnadeel.springdemo.application.RegisterAccount.CreateCategoryCommand;
 import com.qnadeel.springdemo.core.entities.category.Category;
 import com.qnadeel.springdemo.core.entities.user.security.UserPrinciple;
-import com.qnadeel.springdemo.presentation.dto.CreateCategoryRequest;
+import com.qnadeel.springdemo.presentation.dto.category.CreateCategoryRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
