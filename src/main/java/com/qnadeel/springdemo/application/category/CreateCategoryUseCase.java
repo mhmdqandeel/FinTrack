@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.application;
+package com.qnadeel.springdemo.application.category;
 
 import com.qnadeel.springdemo.application.RegisterAccount.CreateCategoryCommand;
 import com.qnadeel.springdemo.core.entities.category.Category;
@@ -6,7 +6,6 @@ import com.qnadeel.springdemo.core.entities.category.CategoryRepository;
 import com.qnadeel.springdemo.core.entities.user.UserRepository;
 import com.qnadeel.springdemo.core.entities.user.entity.User;
 import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 @Service
