@@ -1,6 +1,5 @@
 package com.qnadeel.springdemo.application.category;
 
-import com.qnadeel.springdemo.application.RegisterAccount.CreateCategoryCommand;
 import com.qnadeel.springdemo.core.entities.category.Category;
 import com.qnadeel.springdemo.core.entities.category.CategoryFactory;
 import com.qnadeel.springdemo.core.entities.category.CategoryRepository;

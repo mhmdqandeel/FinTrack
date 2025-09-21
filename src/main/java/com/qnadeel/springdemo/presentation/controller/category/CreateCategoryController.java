@@ -1,7 +1,7 @@
 package com.qnadeel.springdemo.presentation.controller.category;
 
 import com.qnadeel.springdemo.application.category.CreateCategoryUseCase;
-import com.qnadeel.springdemo.application.RegisterAccount.CreateCategoryCommand;
+import com.qnadeel.springdemo.application.category.CreateCategoryCommand;
 import com.qnadeel.springdemo.core.entities.category.Category;
 import com.qnadeel.springdemo.core.entities.user.security.UserPrinciple;
 import com.qnadeel.springdemo.presentation.dto.category.CreateCategoryRequest;

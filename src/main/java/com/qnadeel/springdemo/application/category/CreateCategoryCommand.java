@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.application.RegisterAccount;
+package com.qnadeel.springdemo.application.category;
 
 import java.util.UUID;
 
